@@ -4,36 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustRipe - Gizlilik Politikası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: #EA580C; }
-        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 30px; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #777; }
-        .action-note { background-color: #fff7ed; padding: 15px; border-radius: 8px; border-left: 4px solid #EA580C; margin: 20px 0; }
+        :root {
+            --primary: #EA580C; /* Turuncu tonu */
+            --primary-light: #fff7ed;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card: #ffffff;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text); 
+            background-color: var(--bg);
+            max-width: 850px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+        }
+
+        .card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h1 { 
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text);
+            letter-spacing: -0.025em;
+        }
+
+        .last-updated { 
+            color: var(--text-light); 
+            font-size: 0.95rem; 
+            margin-bottom: 40px; 
+        }
+
+        h2 { 
+            font-size: 1.5rem;
+            margin-top: 40px; 
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            color: var(--text);
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        p, li { color: var(--text-light); font-size: 1.05rem; }
+
+        .action-box { 
+            background-color: var(--primary-light); 
+            padding: 24px; 
+            border-radius: 16px; 
+            border-left: 6px solid var(--primary); 
+            margin: 32px 0; 
+        }
+
+        .action-box h3 { 
+            margin-top: 0; 
+            color: var(--primary); 
+            font-size: 1.2rem;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        .footer { 
+            margin-top: 60px; 
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 0.9rem; 
+            color: var(--text-light); 
+        }
+
+        @media (max-width: 640px) {
+            .card { padding: 24px; }
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>JustRipe Gizlilik Politikası</h1>
-    <p><strong>Son Güncelleme:</strong> 25 Ocak 2026</p>
+    <div class="card">
+        <span class="badge">Resmi Döküman</span>
+        <h1>Gizlilik Politikası</h1>
+        <p class="last-updated">Son Güncelleme: 25 Ocak 2026</p>
 
-    <div class="action-note">
-        <strong>Hesap Silme Hakkında:</strong> Kullanıcılarımız, uygulama içindeki <em>Profil > Kişisel Bilgiler > Hesabımı Sil</em> adımlarını izleyerek hesaplarını ve tüm verilerini diledikleri zaman kalıcı olarak silebilirler.
-    </div>
+        <p>JustRipe olarak, pazar alışverişinizi daha verimli hale getirirken kişisel verilerinizin güvenliğini en üst seviyede tutuyoruz. Bu politika, hangi verileri ne amaçla işlediğimizi açıkça belirtir.</p>
 
-    <h2>1. Giriş</h2>
-    <p>JustRipe olarak, kullanıcılarımızın gizliliğini korumayı taahhüt ediyoruz. Bu politika, topladığımız bilgileri ve bunların nasıl kullanıldığını açıklar.</p>
+        <div class="action-box">
+            <h3>Hesap ve Veri Silme</h3>
+            <p style="color: var(--text); font-weight: 500;">
+                Kullanıcılarımız verileri üzerinde tam kontrole sahiptir. Hesabınızı ve ilişkili tüm verileri silmek için uygulama içinden: 
+                <br><strong>Profil > Kişisel Bilgiler > Hesabımı Sil</strong> 
+                <br>adımlarını izleyebilirsiniz. Bu işlem sonucunda tüm verileriniz sunucularımızdan kalıcı olarak temizlenir.
+            </p>
+        </div>
 
-    <h2>2. Toplanan Bilgiler</h2>
-    <p>Uygulamamızı kullanırken şu bilgileri toplayabiliriz: Hesap bilgileri (e-posta, ad), konum bilgileri (yakındaki pazarları bulmak için) ve cihaz bilgileri.</p>
+        <h2>1. Toplanan Veriler</h2>
+        <ul>
+            <li><strong>Hesap Bilgileri:</strong> E-posta adresi ve profil ismi (Kimlik doğrulama için).</li>
+            <li><strong>Konum Verisi:</strong> Size en yakın pazarları harita üzerinde göstermek için (Sadece uygulama kullanılırken).</li>
+            <li><strong>Cihaz Bilgileri:</strong> Uygulama performansını optimize etmek amacıyla cihaz modeli ve işletim sistemi versiyonu.</li>
+        </ul>
 
-    <h2>3. Bilgilerin Kullanımı</h2>
-    <p>Topladığımız bilgileri; hizmetlerimizi sağlamak, içeriği kişiselleştirmek ve güvenliği artırmak amacıyla kullanırız.</p>
+        <h2>2. Verilerin Kullanımı</h2>
+        <p>Topladığımız bilgiler sadece hizmet kalitesini artırmak, mevsimsel ürün hatırlatmaları yapmak ve pazar konumlarını doğrulamak amacıyla kullanılır. Verileriniz asla reklam ağlarına satılmaz.</p>
 
-    <h2>4. İletişim</h2>
-    <p>Gizlilik politikamız hakkında sorularınız varsa, lütfen uygulama üzerinden bizimle iletişime geçin.</p>
+        <h2>3. Üçüncü Taraf Servisler</h2>
+        <p>Uygulamamız altyapı olarak güvenilir servis sağlayıcıları kullanır:</p>
+        <ul>
+            <li><strong>Firebase:</strong> Veritabanı ve güvenli giriş yönetimi.</li>
+            <li><strong>Google Maps:</strong> Pazar yerlerinin konum gösterimi.</li>
+        </ul>
 
-    <div class="footer">
-        &copy; 2026 JustRipe. Tüm hakları saklıdır.
+        <h2>4. Güvenlik</h2>
+        <p>Verileriniz SSL şifreleme ve modern bulut güvenlik protokolleri ile korunmaktadır. Yetkisiz erişimi engellemek için sistemlerimizi düzenli olarak güncelliyoruz.</p>
+
+        <h2>5. İletişim</h2>
+        <p>Politikamız veya veri haklarınızla ilgili sorularınız için bizimle her zaman iletişime geçebilirsiniz.</p>
+        <p><strong>E-posta:</strong> support@justripeapp.com (Kendi e-postanı yazabilirsin)</p>
+
+        <div class="footer">
+            &copy; 2026 JustRipe. İstanbul Teknik Üniversitesi Mezunu Bir Geliştirici Tarafından Özenle Hazırlandı.
+        </div>
     </div>
 </body>
 </html>
