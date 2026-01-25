@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustRipe - Gizlilik Politikası</title>
+    <title>JustRipe - Yasal Bilgilendirme</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #EA580C; /* Turuncu tonu */
+            --primary: #EA580C;
             --primary-light: #fff7ed;
             --text: #1f2937;
             --text-light: #6b7280;
@@ -22,138 +22,121 @@
             background-color: var(--bg);
             max-width: 850px; 
             margin: 0 auto; 
-            padding: 60px 20px; 
+            padding: 40px 20px; 
         }
 
         .card {
             background: var(--card);
             padding: 40px;
             border-radius: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .badge {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        h1 { 
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--text);
-            letter-spacing: -0.025em;
-        }
-
-        .last-updated { 
-            color: var(--text-light); 
-            font-size: 0.95rem; 
-            margin-bottom: 40px; 
-        }
-
-        h2 { 
-            font-size: 1.5rem;
-            margin-top: 40px; 
-            margin-bottom: 16px;
+        /* Sekme Sistemi */
+        .tabs {
             display: flex;
-            align-items: center;
-            color: var(--text);
+            gap: 10px;
+            margin-bottom: 30px;
+            background: #f3f4f6;
+            padding: 5px;
+            border-radius: 12px;
         }
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 4px;
-            height: 24px;
-            background: var(--primary);
-            margin-right: 12px;
-            border-radius: 2px;
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        p, li { color: var(--text-light); font-size: 1.05rem; }
+        .tab-btn.active {
+            background: var(--card);
+            color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+
+        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+        h2 { font-size: 1.3rem; margin-top: 30px; display: flex; align-items: center; }
+        h2::before { content: ""; width: 4px; height: 20px; background: var(--primary); margin-right: 10px; border-radius: 2px; }
+        
         .action-box { 
             background-color: var(--primary-light); 
-            padding: 24px; 
+            padding: 20px; 
             border-radius: 16px; 
             border-left: 6px solid var(--primary); 
-            margin: 32px 0; 
+            margin: 20px 0; 
         }
-
-        .action-box h3 { 
-            margin-top: 0; 
-            color: var(--primary); 
-            font-size: 1.2rem;
-        }
-
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
 
         .footer { 
-            margin-top: 60px; 
+            margin-top: 40px; 
             padding-top: 20px;
             border-top: 1px solid #e5e7eb;
             text-align: center;
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             color: var(--text-light); 
-        }
-
-        @media (max-width: 640px) {
-            .card { padding: 24px; }
-            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="card">
-        <span class="badge">Resmi Döküman</span>
-        <h1>Gizlilik Politikası</h1>
-        <p class="last-updated">Son Güncelleme: 25 Ocak 2026</p>
-
-        <p>JustRipe olarak, pazar alışverişinizi daha verimli hale getirirken kişisel verilerinizin güvenliğini en üst seviyede tutuyoruz. Bu politika, hangi verileri ne amaçla işlediğimizi açıkça belirtir.</p>
-
-        <div class="action-box">
-            <h3>Hesap ve Veri Silme</h3>
-            <p style="color: var(--text); font-weight: 500;">
-                Kullanıcılarımız verileri üzerinde tam kontrole sahiptir. Hesabınızı ve ilişkili tüm verileri silmek için uygulama içinden: 
-                <br><strong>Profil > Kişisel Bilgiler > Hesabımı Sil</strong> 
-                <br>adımlarını izleyebilirsiniz. Bu işlem sonucunda tüm verileriniz sunucularımızdan kalıcı olarak temizlenir.
-            </p>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('privacy')">Gizlilik Politikası</button>
+            <button class="tab-btn" onclick="showTab('terms')">Kullanım Şartları</button>
         </div>
 
-        <h2>1. Toplanan Veriler</h2>
-        <ul>
-            <li><strong>Hesap Bilgileri:</strong> E-posta adresi ve profil ismi (Kimlik doğrulama için).</li>
-            <li><strong>Konum Verisi:</strong> Size en yakın pazarları harita üzerinde göstermek için (Sadece uygulama kullanılırken).</li>
-            <li><strong>Cihaz Bilgileri:</strong> Uygulama performansını optimize etmek amacıyla cihaz modeli ve işletim sistemi versiyonu.</li>
-        </ul>
+        <div id="privacy" class="content-section active">
+            <h1>Gizlilik Politikası</h1>
+            <p>Son Güncelleme: 25 Ocak 2026</p>
+            
+            <div class="action-box">
+                <strong>Veri Silme:</strong> Profil > Kişisel Bilgiler > Hesabımı Sil adımlarıyla tüm verilerinizi anında silebilirsiniz.
+            </div>
 
-        <h2>2. Verilerin Kullanımı</h2>
-        <p>Topladığımız bilgiler sadece hizmet kalitesini artırmak, mevsimsel ürün hatırlatmaları yapmak ve pazar konumlarını doğrulamak amacıyla kullanılır. Verileriniz asla reklam ağlarına satılmaz.</p>
+            <h2>1. Toplanan Veriler</h2>
+            <p>JustRipe, kullanıcı deneyimini iyileştirmek için e-posta, isim ve yakındaki pazarları göstermek amacıyla konum verisi toplar.</p>
+            
+            <h2>2. Üçüncü Taraf Servisler</h2>
+            <p>Altyapımızda güvenliğiniz için Firebase (Google) ve harita servisleri kullanılmaktadır.</p>
+        </div>
 
-        <h2>3. Üçüncü Taraf Servisler</h2>
-        <p>Uygulamamız altyapı olarak güvenilir servis sağlayıcıları kullanır:</p>
-        <ul>
-            <li><strong>Firebase:</strong> Veritabanı ve güvenli giriş yönetimi.</li>
-            <li><strong>Google Maps:</strong> Pazar yerlerinin konum gösterimi.</li>
-        </ul>
+        <div id="terms" class="content-section">
+            <h1>Kullanım Şartları</h1>
+            <p>Son Güncelleme: 25 Ocak 2026</p>
 
-        <h2>4. Güvenlik</h2>
-        <p>Verileriniz SSL şifreleme ve modern bulut güvenlik protokolleri ile korunmaktadır. Yetkisiz erişimi engellemek için sistemlerimizi düzenli olarak güncelliyoruz.</p>
+            <h2>1. Hizmet Kullanımı</h2>
+            <p>JustRipe, mevsimsel ürün ve pazar bilgilerini sunan bilgilendirme amaçlı bir platformdur. Verilerin doğruluğu için azami gayret gösterilse de yerel pazar değişikliklerinden JustRipe sorumlu tutulamaz.</p>
 
-        <h2>5. İletişim</h2>
-        <p>Politikamız veya veri haklarınızla ilgili sorularınız için bizimle her zaman iletişime geçebilirsiniz.</p>
-        <p><strong>E-posta:</strong> support@justripeapp.com (Kendi e-postanı yazabilirsin)</p>
+            <h2>2. Kullanıcı Sorumlulukları</h2>
+            <p>Kullanıcılar, hesap bilgilerinin güvenliğinden kendileri sorumludur. Uygulama servislerini kötüye kullanmak yasaktır.</p>
+
+            <h2>3. Fikri Mülkiyet</h2>
+            <p>Uygulama içerisindeki tasarım, logo ve içerikler JustRipe'a aittir ve izinsiz kopyalanamaz.</p>
+
+            <h2>4. İletişim</h2>
+            <p>Sorularınız için: support@justripeapp.com</p>
+        </div>
 
         <div class="footer">
-            &copy;© 2026 JustRipe. Ümit Şahin tarafından özenle hazırlandı.
+            &copy; 2026 JustRipe. Ümit Şahin tarafından özenle hazırlandı.
         </div>
     </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
