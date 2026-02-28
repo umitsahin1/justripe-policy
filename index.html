@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustRipe - Yasal Bilgilendirme</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="JustRipe gizlilik politikası ve kullanım şartları. KVKK uyumlu veri koruma politikamız.">
+    <meta property="og:title" content="JustRipe - Yasal Bilgilendirme">
+    <meta property="og:description" content="Gizlilik Politikası ve Kullanım Şartları - JustRipe">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍅</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #EA580C;
@@ -13,75 +18,177 @@
             --text-light: #6b7280;
             --bg: #f9fafb;
             --card: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
             line-height: 1.7; 
             color: var(--text); 
-            background-color: var(--bg);
+            background: linear-gradient(135deg, var(--bg) 0%, #f0f9ff 100%);
             max-width: 850px; 
             margin: 0 auto; 
             padding: 40px 20px; 
+            min-height: 100vh;
         }
 
         .card {
             background: var(--card);
-            padding: 40px;
+            padding: 48px;
             border-radius: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Sekme Sistemi */
         .tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            background: #f3f4f6;
-            padding: 5px;
-            border-radius: 12px;
+            gap: 12px;
+            margin-bottom: 36px;
+            background: rgba(243, 244, 246, 0.8);
+            padding: 6px;
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
         }
 
         .tab-btn {
             flex: 1;
-            padding: 12px;
+            padding: 14px 20px;
             border: none;
-            background: none;
+            background: transparent;
             cursor: pointer;
             font-weight: 600;
+            font-size: 15px;
             color: var(--text-light);
-            border-radius: 8px;
-            transition: 0.3s;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--text);
         }
 
         .tab-btn.active {
-            background: var(--card);
+            background: rgba(255, 255, 255, 0.9);
             color: var(--primary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.15);
+            transform: translateY(-1px);
         }
 
         .content-section { display: none; }
-        .content-section.active { display: block; }
+        .content-section.active { display: block; animation: fadeIn 0.3s ease-out; }
 
-        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; color: var(--text); }
-        h2 { font-size: 1.3rem; margin-top: 30px; display: flex; align-items: center; }
-        h2::before { content: ""; width: 4px; height: 20px; background: var(--primary); margin-right: 10px; border-radius: 2px; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { 
+            font-size: clamp(1.8rem, 4vw, 2.5rem); 
+            font-weight: 800; 
+            margin-bottom: 12px; 
+            color: var(--text);
+            background: linear-gradient(135deg, var(--primary), #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 { 
+            font-size: 1.4rem; 
+            font-weight: 700;
+            margin-top: 36px; 
+            margin-bottom: 16px;
+            display: flex; 
+            align-items: center;
+            color: var(--text);
+        }
+
+        h2::before { 
+            content: ""; 
+            width: 5px; 
+            height: 24px; 
+            background: linear-gradient(135deg, var(--primary), #f97316);
+            margin-right: 14px; 
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
         
         .action-box { 
-            background-color: var(--primary-light); 
-            padding: 20px; 
-            border-radius: 16px; 
+            background: linear-gradient(135deg, var(--primary-light), #fef3c7);
+            padding: 24px;
+            border-radius: 20px; 
             border-left: 6px solid var(--primary); 
-            margin: 20px 0; 
+            margin: 28px 0; 
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
         }
 
         .footer { 
-            margin-top: 40px; 
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
+            margin-top: 48px; 
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            font-size: 0.85rem; 
-            color: var(--text-light); 
+            font-size: 0.9rem; 
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+            text-align: justify;
+        }
+
+        strong {
+            color: var(--primary);
+        }
+
+        /* Print Stili */
+        @media print {
+            body { 
+                padding: 20px; 
+                background: white !important; 
+                box-shadow: none !important;
+            }
+            .tabs, .action-box { 
+                display: block !important; 
+                box-shadow: none !important;
+                background: #f8f9fa !important;
+            }
+            .card { 
+                box-shadow: none !important; 
+                border: 1px solid #dee2e6 !important;
+            }
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --text: #f1f5f9;
+                --text-light: #94a3b8;
+                --card: rgba(30, 41, 59, 0.8);
+                --border: rgba(148, 163, 184, 0.2);
+            }
+            body {
+                background: var(--bg);
+                color: var(--text);
+            }
+        }
+
+        /* Mobil Optimizasyon */
+        @media (max-width: 768px) {
+            body { padding: 24px 16px; }
+            .card { padding: 32px 24px; }
+            .tabs { flex-direction: column; gap: 6px; padding: 8px; }
+            .tab-btn { padding: 12px 16px; }
         }
     </style>
 </head>
@@ -95,48 +202,101 @@
 
         <div id="privacy" class="content-section active">
             <h1>Gizlilik Politikası</h1>
-            <p>Son Güncelleme: 25 Ocak 2026</p>
+            <p><strong>Son Güncelleme:</strong> 25 Ocak 2026</p>
             
             <div class="action-box">
-                <strong>Veri Silme:</strong> Profil > Kişisel Bilgiler > Hesabımı Sil adımlarıyla tüm verilerinizi anında silebilirsiniz.
+                <strong>💾 Verilerinizi Silmek İçin:</strong><br>
+                <em>Profil &gt; Kişisel Bilgiler &gt; "Hesabımı Sil" → Tüm verileriniz <strong>anında silinir</strong>.
             </div>
 
-            <h2>1. Toplanan Veriler</h2>
-            <p>JustRipe, kullanıcı deneyimini iyileştirmek için e-posta, isim ve yakındaki pazarları göstermek amacıyla konum verisi toplar.</p>
-            
+            <h2>1. Hangi Veriler Toplanıyor?</h2>
+            <p>JustRipe, kullanıcı deneyimini iyileştirmek ve yakındaki pazarları göstermek için şu verileri toplar:</p>
+            <ul>
+                <li><strong>E-posta adresi:</strong> Hesap oluşturma ve bildirimler</li>
+                <li><strong>İsim:</strong> Profil görüntüleme</li>
+                <li><strong>Konum:</strong> En yakın pazarları bulmak (arka plan konum izleme yok)</li>
+            </ul>
+
             <h2>2. Üçüncü Taraf Servisler</h2>
-            <p>Altyapımızda güvenliğiniz için Firebase (Google) ve harita servisleri kullanılmaktadır.</p>
+            <p>Uygulamamızda şu servisler kullanılmaktadır:</p>
+            <ul>
+                <li><strong>Firebase (Google):</strong> Analitik, bildirim, veritabanı</li>
+                <li><strong>Google Maps:</strong> Pazar konumları</li>
+            </ul>
+            <p>Bu servislerin <a href="https://policies.google.com/privacy" target="_blank">gizlilik politikalarını</a> inceleyebilirsiniz.</p>
+
+            <h2>3. Veri Saklama Süresi</h2>
+            <p>Verileriniz sadece hesabınız aktif olduğu sürece saklanır. Hesap silindiğinde <strong>tüm veriler kalıcı olarak silinir</strong>.</p>
         </div>
 
         <div id="terms" class="content-section">
             <h1>Kullanım Şartları</h1>
-            <p>Son Güncelleme: 25 Ocak 2026</p>
+            <p><strong>Son Güncelleme:</strong> 25 Ocak 2026</p>
 
-            <h2>1. Hizmet Kullanımı</h2>
-            <p>JustRipe, mevsimsel ürün ve pazar bilgilerini sunan bilgilendirme amaçlı bir platformdur. Verilerin doğruluğu için azami gayret gösterilse de yerel pazar değişikliklerinden JustRipe sorumlu tutulamaz.</p>
+            <h2>1. Hizmet Tanımı</h2>
+            <p>JustRipe, <strong>mevsimsel ürün ve pazar bilgilerini</strong> sunan <em>bilgilendirme amaçlı</em> bir platformdur. Ticari satış veya pazar kurma hizmeti vermez.</p>
 
-            <h2>2. Kullanıcı Sorumlulukları</h2>
-            <p>Kullanıcılar, hesap bilgilerinin güvenliğinden kendileri sorumludur. Uygulama servislerini kötüye kullanmak yasaktır.</p>
+            <h2>2. Veri Doğruluğu</h2>
+            <p>Yerel pazarlardaki fiyatlar ve ürünler sürekli değişebilir. JustRipe, <strong>bilgilerin doğruluğundan sorumlu değildir</strong>. Lütfen alışveriş öncesi pazarla teyit edin.</p>
 
-            <h2>3. Fikri Mülkiyet</h2>
-            <p>Uygulama içerisindeki tasarım, logo ve içerikler JustRipe'a aittir ve izinsiz kopyalanamaz.</p>
+            <h2>3. Kullanıcı Sorumlulukları</h2>
+            <ul>
+                <li>Hesap bilgilerinin güvenliğinden kullanıcı sorumludur</li>
+                <li>Spam, taciz veya uygunsuz içerik yasaktır</li>
+                <li>Ticari kullanım için izin gereklidir</li>
+            </ul>
 
-            <h2>4. İletişim</h2>
-            <p>Sorularınız için: justripeapp@gmail.com</p>
+            <h2>4. Fikri Mülkiyet</h2>
+            <p>Uygulama tasarımı, logosu ve içerikleri JustRipe'a aittir. İzinsiz kopyalanamaz, dağıtılamaz.</p>
+
+            <h2>5. İletişim & Destek</h2>
+            <p>Sorularınız, önerileriniz ve sorun bildirimleriniz için:</p>
+            <div style="background: #f8fafc; padding: 16px; border-radius: 12px; border-left: 4px solid var(--primary);">
+                📧 <strong>justripeapp@gmail.com</strong>
+            </div>
         </div>
 
         <div class="footer">
-            &copy; 2026 JustRipe. Ümit Şahin tarafından özenle hazırlandı.
+            <p>&copy; 2026 JustRipe. Ümit Şahin tarafından <strong>özenle hazırlandı</strong>.</p>
+            <p>Türkiye'nin mevsimsel pazar rehberi 🍅</p>
         </div>
     </div>
 
     <script>
         function showTab(tabId) {
-            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Tüm sekmeleri kapat
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Aktif sekme aç
             document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            event.target.classList.add('active');
+            
+            // URL güncelle (paylaşılabilir)
+            window.history.pushState(null, '', `#${tabId}`);
         }
+
+        // URL'den sekme yükle
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'terms') {
+                showTab('terms');
+            }
+        });
+
+        // History back/forward desteği
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showTab(hash);
+            } else {
+                showTab('privacy');
+            }
+        });
     </script>
 </body>
 </html>
