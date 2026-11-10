@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustRipe - Yasal Bilgilendirme</title>
-    <meta name="description" content="JustRipe gizlilik politikası ve kullanım şartları. KVKK uyumlu veri koruma politikamız.">
+    <meta name="description" content="JustRipe gizlilik politikası, KVKK aydınlatma metni ve kullanım şartları. JustRipe privacy policy and terms of use.">
     <meta property="og:title" content="JustRipe - Yasal Bilgilendirme">
     <meta property="og:description" content="Gizlilik Politikası ve Kullanım Şartları - JustRipe">
     <meta property="og:type" content="website">
@@ -190,115 +190,245 @@
             .tabs { flex-direction: column; gap: 6px; padding: 8px; }
             .tab-btn { padding: 12px 16px; }
         }
+
+        /* Dil seçimi */
+        .lang-switch { display: flex; justify-content: flex-end; gap: 6px; margin-bottom: 16px; }
+        .lang-btn {
+            border: 1px solid var(--border); background: transparent; color: var(--text-light);
+            padding: 6px 12px; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 13px;
+        }
+        .lang-btn.active { color: var(--primary); border-color: var(--primary); }
+        body.lang-en .tr, body.lang-tr .en { display: none !important; }
+        li { margin-bottom: 0.5em; }
+        a { color: var(--primary); }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+        th { color: var(--text-light); font-weight: 600; }
+        @media (max-width: 768px) { table { font-size: 0.88rem; } }
     </style>
 </head>
-<body>
+<body class="lang-tr">
 
     <div class="card">
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="tr" onclick="setLang('tr')">Türkçe</button>
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+        </div>
+
         <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('privacy')">Gizlilik Politikası</button>
-            <button class="tab-btn" onclick="showTab('terms')">Kullanım Şartları</button>
+            <button class="tab-btn active" data-tab="privacy" onclick="showTab('privacy')"><span class="tr">Gizlilik Politikası</span><span class="en">Privacy Policy</span></button>
+            <button class="tab-btn" data-tab="terms" onclick="showTab('terms')"><span class="tr">Kullanım Şartları</span><span class="en">Terms of Use</span></button>
         </div>
 
+        <!-- ===================== GİZLİLİK / PRIVACY ===================== -->
         <div id="privacy" class="content-section active">
-            <h1>Gizlilik Politikası</h1>
-            <p><strong>Son Güncelleme:</strong> 25 Ocak 2026</p>
-            
-           <div class="action-box">
-              <strong>💾 Verilerinizi Silmek İçin:</strong><br>
-              <span style="color: #1f2937; font-weight: 600;">
-              Profil → Kişisel Bilgiler → "Hesabımı Sil" → <strong>Tüm verileriniz anında silinir</strong>.
-              </span>
-          </div>
 
-            <h2>1. Hangi Veriler Toplanıyor?</h2>
-            <p>JustRipe, kullanıcı deneyimini iyileştirmek ve yakındaki pazarları göstermek için şu verileri toplar:</p>
-            <ul>
-                <li><strong>E-posta adresi:</strong> Hesap oluşturma ve bildirimler</li>
-                <li><strong>İsim:</strong> Profil görüntüleme</li>
-                <li><strong>Konum:</strong> En yakın pazarları bulmak (arka plan konum izleme yok)</li>
-            </ul>
+            <div class="tr">
+                <h1>Gizlilik Politikası ve KVKK Aydınlatma Metni</h1>
+                <p><strong>Son Güncelleme:</strong> 10 Kasım 2026</p>
 
-            <h2>2. Üçüncü Taraf Servisler</h2>
-            <p>Uygulamamızda şu servisler kullanılmaktadır:</p>
-            <ul>
-                <li><strong>Firebase (Google):</strong> Analitik, bildirim, veritabanı</li>
-                <li><strong>Google Maps:</strong> Pazar konumları</li>
-            </ul>
-            <p>Bu servislerin <a href="https://policies.google.com/privacy" target="_blank">gizlilik politikalarını</a> inceleyebilirsiniz.</p>
+                <div class="action-box">
+                    <strong>💾 Verilerinizi Silmek İçin:</strong><br>
+                    <span style="color: #1f2937; font-weight: 600;">
+                    Profil → Kişisel Bilgiler → "Hesabımı Sil". Hesabınız; profiliniz, profil fotoğrafınız, favorileriniz, yorumlarınız ve bildirimlerinizle birlikte <strong>kalıcı olarak silinir</strong>.
+                    </span>
+                </div>
 
-            <h2>3. Veri Saklama Süresi</h2>
-            <p>Verileriniz sadece hesabınız aktif olduğu sürece saklanır. Hesap silindiğinde <strong>tüm veriler kalıcı olarak silinir</strong>.</p>
+                <h2>1. Veri Sorumlusu</h2>
+                <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu, JustRipe uygulamasının geliştiricisi <strong>Ümit Şahin</strong>'dir. İletişim: <a href="mailto:justripeapp@gmail.com">justripeapp@gmail.com</a></p>
+
+                <h2>2. Hangi Verileri, Neden İşliyoruz?</h2>
+                <table>
+                    <tr><th>Veri</th><th>Amaç</th></tr>
+                    <tr><td>E-posta adresi, ad-soyad</td><td>Hesap oluşturma, giriş ve şifre sıfırlama. Google veya Apple ile girişte bu bilgiler ilgili sağlayıcıdan alınır (Apple ile girişte gizli e-posta adresi kullanılabilir).</td></tr>
+                    <tr><td>Profil fotoğrafı <em>(isteğe bağlı)</em></td><td>Profilinizde ve yazdığınız yorumlarda gösterilmesi.</td></tr>
+                    <tr><td>Konum</td><td>Size en yakın semt pazarlarını ve marketleri göstermek, mesafeyi hesaplamak. Konum yalnızca uygulama açıkken alınır; arka planda konum takibi yapılmaz. Koordinatlarınız sunucularımızda saklanmaz, cihazınızda tutulur. Kişisel Bilgiler ekranında kaydettiğiniz konum metni (ör. "Kadıköy, İstanbul") profilinizde saklanır.</td></tr>
+                    <tr><td>Favoriler</td><td>Beğendiğiniz ürünleri listelemek.</td></tr>
+                    <tr><td>Yorumlar ve puanlar</td><td>Pazarlar hakkında yazdığınız yorumlar <strong>herkese açıktır</strong> ve adınız ile profil fotoğrafınızla birlikte gösterilir.</td></tr>
+                    <tr><td>Bildirim kimliği (token)</td><td>Bildirim izni verirseniz size bildirim gönderebilmek.</td></tr>
+                    <tr><td>Geri bildirim mesajları</td><td>Uygulama içinden gönderdiğiniz puan, yorum, e-posta adresi ve cihaz işletim sistemi; destek ve uygulamayı geliştirme.</td></tr>
+                    <tr><td>Cihaz doğrulama</td><td>Uygulamanın sahte isteklere karşı korunması (Firebase App Check / Apple App Attest). Kişisel veri içermeyen bir doğrulama belirteci kullanılır.</td></tr>
+                </table>
+                <p>JustRipe <strong>reklam göstermez, verilerinizi satmaz, sizi başka uygulamalarda takip etmez</strong> ve analitik/izleme aracı kullanmaz.</p>
+
+                <h2>3. Hukuki Sebep</h2>
+                <p>Verileriniz KVKK md. 5/2-c (sözleşmenin kurulması ve ifası: hesabınızın ve uygulama hizmetlerinin sunulması) ve md. 5/2-f (meşru menfaat: güvenlik ve hizmetin geliştirilmesi) kapsamında işlenir. Konum ve bildirim izinleri ise cihazınızda sizin onayınızla verilir ve dilediğiniz zaman telefon ayarlarından geri alınabilir.</p>
+
+                <h2>4. Üçüncü Taraf Servisler ve Yurt Dışına Aktarım</h2>
+                <ul>
+                    <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging, App Check): hesap, veritabanı, dosya, bildirim ve güvenlik altyapısı.</li>
+                    <li><strong>Google Maps Platform (Places API):</strong> yakındaki marketleri bulmak için konumunuz Google'a gönderilir.</li>
+                    <li><strong>OpenStreetMap Nominatim:</strong> konumunuzdan semt/ilçe adını bulmak için koordinatlarınız gönderilir.</li>
+                    <li><strong>Google ile Giriş / Apple ile Giriş:</strong> yalnızca bu yöntemleri seçerseniz.</li>
+                </ul>
+                <p>Bu hizmet sağlayıcıların sunucuları yurt dışında bulunabilir; verileriniz bu sağlayıcıların altyapısında işlenir. Ayrıntılar için: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>, <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OpenStreetMap Gizlilik Politikası</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Gizlilik Politikası</a>.</p>
+
+                <h2>5. Saklama Süresi ve Silme</h2>
+                <p>Verileriniz hesabınız açık olduğu sürece saklanır. Uygulama içinden hesabınızı sildiğinizde profiliniz, profil fotoğrafınız, favorileriniz, yorumlarınız ve bildirimleriniz kalıcı olarak silinir. Uygulama içinden gönderdiğiniz geri bildirim mesajları destek kaydı olarak saklanır; silinmesini e-postayla isteyebilirsiniz. Telefonunuzda tutulan konum ve önbellek verileri uygulamayı sildiğinizde silinir.</p>
+
+                <h2>6. Haklarınız (KVKK md. 11)</h2>
+                <p>Kişisel verilerinizin işlenip işlenmediğini öğrenme, bilgi talep etme, işleme amacını öğrenme, aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini isteme, otomatik sistemlerle analiz edilmesine itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsanız zararın giderilmesini talep etme haklarına sahipsiniz. Başvurularınızı <a href="mailto:justripeapp@gmail.com">justripeapp@gmail.com</a> adresine iletebilirsiniz; en geç 30 gün içinde yanıtlanır.</p>
+
+                <h2>7. Çocuklar</h2>
+                <p>JustRipe 13 yaşından küçük çocuklara yönelik değildir ve bilerek bu yaştaki çocuklardan kişisel veri toplamaz.</p>
+
+                <h2>8. Değişiklikler</h2>
+                <p>Bu metin güncellenebilir; güncel sürüm her zaman bu sayfada yayımlanır.</p>
+            </div>
+
+            <div class="en">
+                <h1>Privacy Policy</h1>
+                <p><strong>Last updated:</strong> November 10, 2026</p>
+
+                <div class="action-box">
+                    <strong>💾 To delete your data:</strong><br>
+                    <span style="color: #1f2937; font-weight: 600;">
+                    Profile → Personal Information → "Delete my account". Your account is <strong>permanently deleted</strong> together with your profile, profile photo, favorites, reviews and notifications.
+                    </span>
+                </div>
+
+                <h2>1. Who We Are</h2>
+                <p>JustRipe is developed by <strong>Ümit Şahin</strong>, the data controller under the Turkish Personal Data Protection Law No. 6698 (KVKK). Contact: <a href="mailto:justripeapp@gmail.com">justripeapp@gmail.com</a></p>
+
+                <h2>2. What We Collect and Why</h2>
+                <table>
+                    <tr><th>Data</th><th>Purpose</th></tr>
+                    <tr><td>Email address, name</td><td>Creating your account, signing in and resetting your password. With Sign in with Google or Apple, this comes from that provider (Apple may provide a private relay email).</td></tr>
+                    <tr><td>Profile photo <em>(optional)</em></td><td>Shown on your profile and next to your reviews.</td></tr>
+                    <tr><td>Location</td><td>Showing the street markets and stores nearest to you and their distance. Location is only used while the app is open; there is no background tracking. Your coordinates are not stored on our servers; they stay on your device. The location text you save under Personal Information (e.g. "Kadıköy, Istanbul") is stored in your profile.</td></tr>
+                    <tr><td>Favorites</td><td>Listing the produce you saved.</td></tr>
+                    <tr><td>Reviews and ratings</td><td>Reviews you write about markets are <strong>public</strong> and shown with your name and profile photo.</td></tr>
+                    <tr><td>Notification token</td><td>Sending you notifications if you allow them.</td></tr>
+                    <tr><td>Feedback messages</td><td>The rating, comment, email address and device OS you send from the app; used for support and improving the app.</td></tr>
+                    <tr><td>Device attestation</td><td>Protecting the app against fake requests (Firebase App Check / Apple App Attest), using a token that contains no personal data.</td></tr>
+                </table>
+                <p>JustRipe <strong>shows no ads, does not sell your data, does not track you across other apps</strong> and uses no analytics or tracking tools.</p>
+
+                <h2>3. Third-Party Services</h2>
+                <ul>
+                    <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging, App Check): accounts, database, files, notifications and security.</li>
+                    <li><strong>Google Maps Platform (Places API):</strong> your location is sent to Google to find nearby stores.</li>
+                    <li><strong>OpenStreetMap Nominatim:</strong> your coordinates are sent to look up your district name.</li>
+                    <li><strong>Sign in with Google / Sign in with Apple:</strong> only if you choose them.</li>
+                </ul>
+                <p>These providers may process data on servers outside Turkey. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OpenStreetMap</a> and <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a> privacy policies.</p>
+
+                <h2>4. Retention and Deletion</h2>
+                <p>We keep your data while your account exists. Deleting your account in the app permanently deletes your profile, profile photo, favorites, reviews and notifications. Feedback messages sent from the app are kept as support records; you can ask us by email to delete them. Location and cache data on your phone are removed when you delete the app.</p>
+
+                <h2>5. Your Rights</h2>
+                <p>You can ask whether we process your data, request access, correction or deletion, learn who it is shared with, and object to processing. Send requests to <a href="mailto:justripeapp@gmail.com">justripeapp@gmail.com</a>; we reply within 30 days.</p>
+
+                <h2>6. Children</h2>
+                <p>JustRipe is not directed at children under 13 and does not knowingly collect their personal data.</p>
+
+                <h2>7. Changes</h2>
+                <p>We may update this policy; the current version is always published on this page.</p>
+            </div>
         </div>
 
+        <!-- ===================== ŞARTLAR / TERMS ===================== -->
         <div id="terms" class="content-section">
-            <h1>Kullanım Şartları</h1>
-            <p><strong>Son Güncelleme:</strong> 25 Ocak 2026</p>
 
-            <h2>1. Hizmet Tanımı</h2>
-            <p>JustRipe, <strong>mevsimsel ürün ve pazar bilgilerini</strong> sunan <em>bilgilendirme amaçlı</em> bir platformdur. Ticari satış veya pazar kurma hizmeti vermez.</p>
+            <div class="tr">
+                <h1>Kullanım Şartları</h1>
+                <p><strong>Son Güncelleme:</strong> 10 Kasım 2026</p>
 
-            <h2>2. Veri Doğruluğu</h2>
-            <p>Yerel pazarlardaki fiyatlar ve ürünler sürekli değişebilir. JustRipe, <strong>bilgilerin doğruluğundan sorumlu değildir</strong>. Lütfen alışveriş öncesi pazarla teyit edin.</p>
+                <h2>1. Hizmet Tanımı</h2>
+                <p>JustRipe, <strong>mevsimsel ürün, semt pazarı ve av yasağı bilgilerini</strong> sunan <em>bilgilendirme amaçlı</em> bir uygulamadır. Ticari satış veya pazar kurma hizmeti vermez. Uygulama, Apple'ın <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standart Son Kullanıcı Lisans Sözleşmesi (EULA)</a> kapsamında sunulur.</p>
 
-            <h2>3. Kullanıcı Sorumlulukları</h2>
-            <ul>
-                <li>Hesap bilgilerinin güvenliğinden kullanıcı sorumludur</li>
-                <li>Spam, taciz veya uygunsuz içerik yasaktır</li>
-                <li>Ticari kullanım için izin gereklidir</li>
-            </ul>
+                <h2>2. Bilgilerin Doğruluğu</h2>
+                <p>Mevsim bilgileri Türkiye geneli için yaklaşık değerlerdir. Semt pazarlarının gün ve yerleri belediyeler tarafından değiştirilebilir. Av yasağı bilgileri yürürlükteki tebliğden derlenmiştir; bağlayıcı olan Resmî Gazete'deki metindir. JustRipe <strong>bilgilerin güncelliğinden ve doğruluğundan sorumlu değildir</strong>; lütfen alışveriş öncesi teyit edin.</p>
 
-            <h2>4. Fikri Mülkiyet</h2>
-            <p>Uygulama tasarımı, logosu ve içerikleri JustRipe'a aittir. İzinsiz kopyalanamaz, dağıtılamaz.</p>
+                <h2>3. Kullanıcı Sorumlulukları</h2>
+                <ul>
+                    <li>Hesap bilgilerinizin güvenliğinden siz sorumlusunuz.</li>
+                    <li>Spam, taciz, hakaret, yanıltıcı veya uygunsuz içerik yasaktır; bu tür yorumlar kaldırılabilir ve hesap kapatılabilir.</li>
+                    <li>Uygulama içeriğinin ticari amaçla kullanılması izne tabidir.</li>
+                </ul>
 
-            <h2>5. İletişim & Destek</h2>
-            <p>Sorularınız, önerileriniz ve sorun bildirimleriniz için:</p>
-            <div style="background: #f8fafc; padding: 16px; border-radius: 12px; border-left: 4px solid var(--primary);">
-                📧 <strong>justripeapp@gmail.com</strong>
+                <h2>4. Fikri Mülkiyet ve Veri Kaynakları</h2>
+                <p>Uygulama tasarımı, logosu, tarifleri ve makaleleri JustRipe'a aittir; izinsiz kopyalanamaz. Şu içerikler üçüncü taraf kaynaklardan alınmıştır:</p>
+                <ul>
+                    <li><strong>Semt pazarı bilgileri:</strong> İstanbul Büyükşehir Belediyesi <a href="https://data.ibb.gov.tr/dataset/istanbul-ili-semt-pazarlari" target="_blank" rel="noopener">İBB Açık Veri Portalı</a>. <a href="https://data.ibb.gov.tr/license" target="_blank" rel="noopener">İBB Açık Veri Lisansı</a> kapsamında lisanslanan kamu sektörü bilgilerini içerir. İBB, JustRipe'ı onaylamaz veya desteklemez.</li>
+                    <li><strong>Av yasağı bilgileri:</strong> 6/1 Numaralı Ticari Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (Resmî Gazete).</li>
+                    <li><strong>Pazar görselleri</strong> temsilidir; ilgili pazarın gerçek fotoğrafı değildir.</li>
+                </ul>
+
+                <h2>5. İletişim & Destek</h2>
+                <p>Sorularınız, önerileriniz ve sorun bildirimleriniz için:</p>
+                <div style="background: #f8fafc; padding: 16px; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    📧 <strong>justripeapp@gmail.com</strong>
+                </div>
+            </div>
+
+            <div class="en">
+                <h1>Terms of Use</h1>
+                <p><strong>Last updated:</strong> November 10, 2026</p>
+
+                <h2>1. The Service</h2>
+                <p>JustRipe is an <em>informational</em> app about <strong>seasonal produce, street markets and fishing bans</strong> in Turkey. It does not sell goods or run markets. The app is provided under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard End User License Agreement (EULA)</a>.</p>
+
+                <h2>2. Accuracy</h2>
+                <p>Seasons are approximate for Turkey as a whole. Market days and locations may be changed by municipalities. Fishing-ban dates are compiled from the official communiqué; the text published in the Official Gazette prevails. JustRipe <strong>is not responsible for the accuracy or timeliness of this information</strong>; please check before you shop.</p>
+
+                <h2>3. Your Responsibilities</h2>
+                <ul>
+                    <li>You are responsible for keeping your account secure.</li>
+                    <li>Spam, harassment, insults, misleading or inappropriate content is not allowed; such reviews may be removed and accounts closed.</li>
+                    <li>Commercial use of the app's content requires permission.</li>
+                </ul>
+
+                <h2>4. Intellectual Property and Data Sources</h2>
+                <p>The app's design, logo, recipes and articles belong to JustRipe and may not be copied without permission. Third-party sources:</p>
+                <ul>
+                    <li><strong>Street market data:</strong> Istanbul Metropolitan Municipality <a href="https://data.ibb.gov.tr/dataset/istanbul-ili-semt-pazarlari" target="_blank" rel="noopener">Open Data Portal</a>. Contains public sector information licensed under the <a href="https://data.ibb.gov.tr/license" target="_blank" rel="noopener">IBB Open Data License</a>. IBB does not endorse JustRipe.</li>
+                    <li><strong>Fishing bans:</strong> Communiqué No. 6/1 on Commercial Fishing (Turkish Official Gazette).</li>
+                    <li><strong>Market images</strong> are representative, not photos of the specific market.</li>
+                </ul>
+
+                <h2>5. Contact & Support</h2>
+                <div style="background: #f8fafc; padding: 16px; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    📧 <strong>justripeapp@gmail.com</strong>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 JustRipe. Ümit Şahin tarafından <strong>özenle hazırlandı</strong>.</p>
-            <p>Türkiye'nin mevsimsel pazar rehberi 🍅</p>
+            <p>&copy; 2026 JustRipe. <span class="tr">Ümit Şahin tarafından <strong>özenle hazırlandı</strong>.</span><span class="en">Made with care by <strong>Ümit Şahin</strong>.</span></p>
+            <p><span class="tr">Türkiye'nin mevsimsel pazar rehberi 🍅</span><span class="en">Turkey's seasonal market guide 🍅</span></p>
         </div>
     </div>
 
     <script>
-        function showTab(tabId) {
-            // Tüm sekmeleri kapat
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Aktif sekme aç
-            document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
-            
-            // URL güncelle (paylaşılabilir)
-            window.history.pushState(null, '', `#${tabId}`);
+        function showTab(tabId, push) {
+            if (!document.getElementById(tabId)) tabId = 'privacy';
+            document.querySelectorAll('.content-section').forEach(s => s.classList.toggle('active', s.id === tabId));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+            if (push !== false) window.history.pushState(null, '', '#' + tabId + (document.body.classList.contains('lang-en') ? '-en' : ''));
         }
 
-        // URL'den sekme yükle
-        window.addEventListener('load', () => {
-            const hash = window.location.hash.replace('#', '');
-            if (hash === 'terms') {
-                showTab('terms');
-            }
-        });
+        function setLang(lang) {
+            document.body.classList.remove('lang-tr', 'lang-en');
+            document.body.classList.add('lang-' + lang);
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+            try { localStorage.setItem('justripe-lang', lang); } catch (e) {}
+        }
 
-        // History back/forward desteği
-        window.addEventListener('popstate', () => {
+        // URL: #privacy, #terms, #privacy-en, #terms-en
+        function applyHash() {
             const hash = window.location.hash.replace('#', '');
-            if (hash) {
-                showTab(hash);
-            } else {
-                showTab('privacy');
-            }
-        });
+            const [tab, lang] = hash.split('-');
+            let saved = null;
+            try { saved = localStorage.getItem('justripe-lang'); } catch (e) {}
+            const browserEn = !navigator.language || !navigator.language.toLowerCase().startsWith('tr');
+            setLang(lang === 'en' ? 'en' : (lang === 'tr' ? 'tr' : (saved || (browserEn ? 'en' : 'tr'))));
+            showTab(tab || 'privacy', false);
+        }
+
+        window.addEventListener('load', applyHash);
+        window.addEventListener('popstate', applyHash);
     </script>
 </body>
 </html>
